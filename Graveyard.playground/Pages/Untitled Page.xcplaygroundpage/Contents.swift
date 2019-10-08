@@ -117,3 +117,21 @@ travel {
 }
 //both of these serve the same purpose
 
+let newYork = {
+    print("Were Going to New york")
+}
+let chicago = {
+    print("Were Going to Chicago")
+}
+
+func cityToTravelTo(city: () -> Void) {
+    print("where are we going?")
+    city()
+    print("We arrived safely to our destination")
+}
+
+//cityToTravelTo {
+//    <#code#>
+//}
+//why does xCode give us this option above? generic no parameters is the normal?
+cityToTravelTo(city: newYork)
