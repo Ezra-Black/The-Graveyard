@@ -66,3 +66,29 @@ var hasGuitar = { (hasGuitar: Bool) -> Bool in
     }
 }
 hasGuitar(true)
+
+//MARK: Closures as parameters
+//this is going to hurt your brain at first. Seriously.
+
+let driving3 = {
+    print("I amdriving in my car.")
+}
+
+func travel(action: () -> Void) {
+    print("Im getting ready to go")
+    action()
+    print("I arrived!")
+}
+
+travel(action: driving3)
+
+let evilRobot = {
+    print("EXTERMINATE")
+}
+
+func buildRobot(personality: () -> Void) {
+    print("time to turn on the robot!")
+    personality()
+}
+buildRobot(personality: evilRobot)
+
