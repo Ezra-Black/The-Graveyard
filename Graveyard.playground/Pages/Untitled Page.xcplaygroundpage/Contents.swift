@@ -85,10 +85,17 @@ travel(action: driving3)
 let evilRobot = {
     print("EXTERMINATE")
 }
+let goodRobot = {
+    print("I will care for you beep boop")
+}
+let depressedRobot = {
+    print("What is my purpose? To spread butter?")
+}
 
 func buildRobot(personality: () -> Void) {
     print("time to turn on the robot!")
     personality()
 }
 buildRobot(personality: evilRobot)
+
 
