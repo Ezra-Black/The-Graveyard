@@ -98,4 +98,22 @@ func buildRobot(personality: () -> Void) {
 }
 buildRobot(personality: evilRobot)
 
+//MARK: Trailing syntax closures
+//if a closure is the last paramater in a function it can be refactored as such
+
+
+func travel1(action: () -> Void) {
+    print("I'm getting ready to go.")
+    action()
+    print("I arrived!")
+}
+//1
+travel1() {
+    print("I'm driving in my car")
+}
+//2- since there are no parameters in the closure, there is no need for "()"
+travel {
+    print("I am driving in my car")
+}
+//both of these serve the same purpose
 
