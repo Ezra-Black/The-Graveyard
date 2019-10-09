@@ -135,3 +135,41 @@ func cityToTravelTo(city: () -> Void) {
 //}
 //why does xCode give us this option above? generic no parameters is the normal?
 cityToTravelTo(city: newYork)
+
+
+struct IntToStringConverter {
+    // A closure property that takes an Int as input
+    // and produces a String as output:
+    var body: (Int) -> String
+}
+
+// A closure defined as an inline variable, which
+// takes no input and produces an Int as output:
+let intProvider: () -> Int = { return 7 }
+
+// A closure function argument that takes no input
+// and also doesn't produce any output:
+func performOperation(then closure: () -> Void) {
+    
+}
+
+extension String {
+    func transformWords(
+        using closure: (Substring) -> String
+    ) -> String {
+        // Split the current string up into word substrings:
+        let words = split(separator: " ")
+        var results = [String]()
+
+        // Iterate through each word and transform it:
+        for word in words {
+            // We can call the closure that was passed into our
+            // function just like how we'd call a function:
+            let transformed = closure(word)
+            results.append(transformed)
+        }
+
+        // Join our results array back into a string:
+        return results.joined(separator: " ")
+    }
+}
