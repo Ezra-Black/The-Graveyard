@@ -130,10 +130,6 @@ func cityToTravelTo(city: () -> Void) {
     print("We arrived safely to our destination")
 }
 
-//cityToTravelTo {
-//    <#code#>
-//}
-//why does xCode give us this option above? generic no parameters is the normal?
 cityToTravelTo(city: newYork)
 
 
