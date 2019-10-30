@@ -1,6 +1,8 @@
 import Foundation
 //MARK: Closures
 
+//all of this work was derived from unwrap app by Paul Hudson and played around with! So don't feel overwhelemed if you are new. Closures hurt my brain too >.<
+
         //simple closure
 let driving1 = {
     print("I'm driving to my car")
@@ -149,23 +151,45 @@ func performOperation(then closure: () -> Void) {
     
 }
 
-extension String {
-    func transformWords(
-        using closure: (Substring) -> String
-    ) -> String {
-        // Split the current string up into word substrings:
-        let words = split(separator: " ")
-        var results = [String]()
+//extension String {
+//    func transformWords(
+//        using closure: (Substring) -> String
+//    ) -> String {
+//        // Split the current string up into word substrings:
+//        let words = split(separator: " ")
+//        var results = [String]()
+//
+//        // Iterate through each word and transform it:
+//        for word in words {
+//            // We can call the closure that was passed into our
+//            // function just like how we'd call a function:
+//            let transformed = closure(word)
+//            results.append(transformed)
+//        }
+//
+//        // Join our results array back into a string:
+//        return results.joined(separator: " ")
+//    }
+//}
 
-        // Iterate through each word and transform it:
-        for word in words {
-            // We can call the closure that was passed into our
-            // function just like how we'd call a function:
-            let transformed = closure(word)
-            results.append(transformed)
-        }
+    //MARK: Lambda Closures
+//here we created something awesome.
+//1: a closure that takes in one argument called name. and returns a string.
+//2: we called the argument WITHIN itsself. and RETURNED the same exact string as the output!!
+//3: afterwards we assign this WHOLE function syntax to a constant called string and then we print it out. this would be usefull in some amazing ways. such as having dynamic input code ready and more capable to be updated and adjusted, and used EVERYWHERE you need this functionality without constricting your capabilities!!!!
 
-        // Join our results array back into a string:
-        return results.joined(separator: " ")
-    }
+let myClosure = { (name: String) -> String in
+   return "hello \(name)"
 }
+
+let string = myClosure("Joe")
+print(string)
+
+
+//function that takes a closure as an argument
+//and also using trailing closure syntax
+func sendMessageTo(name: String, message: (String) -> String) {
+    print(message(name))
+}
+
+sendMessageTo(name: "Steve") {"Hello " + $0}
