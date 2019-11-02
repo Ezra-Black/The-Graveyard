@@ -3,5 +3,6 @@
     <pages>
         <page name='Closures'/>
         <page name='Queues'/>
+        <page name='NetworkingJSON'/>
     </pages>
 </playground>
