@@ -4,5 +4,6 @@
         <page name='Closures'/>
         <page name='Queues'/>
         <page name='NetworkingJSON'/>
+        <page name='Values'/>
     </pages>
 </playground>
