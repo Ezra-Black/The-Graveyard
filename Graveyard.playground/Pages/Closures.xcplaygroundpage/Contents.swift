@@ -193,3 +193,5 @@ func sendMessageTo(name: String, message: (String) -> String) {
 }
 
 sendMessageTo(name: "Steve") {"Hello " + $0}
+
+//I hate CLOSURES
