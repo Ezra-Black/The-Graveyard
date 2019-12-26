@@ -6,5 +6,7 @@
         <page name='NetworkingJSON'/>
         <page name='Values'/>
         <page name='Programmatic Constraints BoilerPl8'/>
+        <page name='Higher Order Functions'/>
+        <page name='Random  Int Generator '/>
     </pages>
 </playground>
