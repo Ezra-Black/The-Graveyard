@@ -9,6 +9,5 @@
         <page name='Random  Int Generator '/>
         <page name='HighLow Card Game'/>
         <page name='PokeAPI Testing'/>
-        <page name='Dictionaries'/>
     </pages>
 </playground>
