@@ -11,5 +11,6 @@
         <page name='PokeAPI Testing'/>
         <page name='Dictionaries'/>
         <page name='ProgrammaticUI'/>
+        <page name='cells'/>
     </pages>
 </playground>
