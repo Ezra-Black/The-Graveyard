@@ -12,7 +12,7 @@ struct Person: Codable {
         case starships
     }
     
-    let name: String
+    let fullName: String
     let height: Int // cm
     let hairColor: String
     let created: Date
@@ -27,7 +27,8 @@ struct Person: Codable {
         //unKyedContainer == Array
         let container = try decoder.container(keyedBy: PersonKeys.self)
         
-        name = try container.decode(String.self, forKey: .name) //PersonKeys.name
+        
+        fullName = try container.decode(String.self, forKey: .name)
         hairColor = try container.decode(String.self, forKey: .hairColor)
         
         do {
@@ -59,6 +60,33 @@ struct Person: Codable {
         
         self.starshipURLs = starshipURLs
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: PersonKeys.self)
+        try container.encode(fullName, forKey: .name)
+        try container.encode(hairColor, forKey: .hairColor)
+        
+        let heightString = String(height)
+        try container.encode(heightString, forKey: .height)
+        
+        try container.encode(created, forKey: .created)
+        
+        try container.encode(filmURLs, forKey: .films)
+        
+        try container.encode(vehicleURLs.map { $0.path } , forKey: .vehicles)
+        
+        var starshipsContainer = container.nestedUnkeyedContainer(forKey: .starships)
+        
+        for starshipURL in starshipURLs {
+            let starshipString = starshipURL.path
+             try starshipsContainer.encode(starshipString)
+        }
+        
+       
+        
+        
+    }
+    
 }
 
 let url = URL(string: "https://swapi.co/api/people/1/")!
@@ -69,7 +97,6 @@ let data = try! Data(contentsOf: url)
 let decoder = JSONDecoder()
 //decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-
 //Date Formatter
 var dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -79,3 +106,13 @@ decoder.dateDecodingStrategy = .formatted(dateFormatter)
 let luke = try! decoder.decode(Person.self, from: data)
 
 print(luke)
+
+//custom encoder to format JSON
+let encoder = JSONEncoder()
+encoder.outputFormatting = .prettyPrinted
+encoder.dateEncodingStrategy = .formatted(dateFormatter)
+
+let lukeData = try! encoder.encode(luke)
+//making luke data a string
+let dataAsString = String(data: lukeData, encoding: .utf8)!
+print(dataAsString)
