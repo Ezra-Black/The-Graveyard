@@ -8,6 +8,7 @@ struct Person: Codable {
         case hairColor = "hair_color"
         case created
         case films
+        case vehicles
     }
     
     let name: String
@@ -15,6 +16,7 @@ struct Person: Codable {
     let hairColor: String
     let created: Date
     let filmURLs: [URL]
+    let vehicleURLs: [URL]
     
     
     //custom decoder
@@ -36,6 +38,10 @@ struct Person: Codable {
         created = try container.decode(Date.self, forKey: .created)
         //decoding nested json array of properties
         filmURLs = try container.decode([URL].self, forKey: .films)
+        
+        let vehicleURLStrings = try container.decode([String].self, forKey: .vehicles)
+        //compact map only gets arrays no optionals
+        vehicleURLs = vehicleURLStrings.compactMap { URL(string: $0) }
     }
 }
 
