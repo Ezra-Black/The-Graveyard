@@ -9,6 +9,7 @@ struct Person: Codable {
         case created
         case films
         case vehicles
+        case starships
     }
     
     let name: String
@@ -17,6 +18,7 @@ struct Person: Codable {
     let created: Date
     let filmURLs: [URL]
     let vehicleURLs: [URL]
+    let starshipURLs: [URL]
     
     
     //custom decoder
@@ -42,6 +44,20 @@ struct Person: Codable {
         let vehicleURLStrings = try container.decode([String].self, forKey: .vehicles)
         //compact map only gets arrays no optionals
         vehicleURLs = vehicleURLStrings.compactMap { URL(string: $0) }
+        
+        var starshipsContainer = try container.nestedUnkeyedContainer(forKey: .starships)
+        var starshipURLs: [URL] = []
+        
+        
+        
+        while starshipsContainer.isAtEnd == false {
+            let starshipString = try starshipsContainer.decode(String.self)
+            if let starShipURL = URL(string: starshipString) {
+                starshipURLs.append(starShipURL)
+            }
+        }
+        
+        self.starshipURLs = starshipURLs
     }
 }
 
