@@ -16,6 +16,5 @@
         <page name='FlareBoilerpl8'/>
         <page name='networking boilerpl8'/>
         <page name='CoreDataStack'/>
-        <page name='Intermediate Codable'/>
     </pages>
 </playground>
