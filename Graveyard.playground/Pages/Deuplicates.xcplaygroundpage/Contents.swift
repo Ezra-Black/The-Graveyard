@@ -27,8 +27,8 @@ func removeDuplicates(array: [Int]) -> [Int] {
 
 // Generic
 
-//func removeDuplicates<Element: Equatable>(array: [Element]) -> [Element] {
-//    var result: [Element] = []
+//func removeDuplicates<T: Equatable>(array: [T]) -> [T] {
+//    var result: [T] = []
 //
 //    for item in array {
 //        if !result.contains(item) {
@@ -47,8 +47,8 @@ func removeDuplicates(array: [Int]) -> [Int] {
 
 
 
-func removeDuplicates<S: Sequence>(sequence: S) -> [S.Element] where S.Element: Hashable {
-    let result: Set<S.Element> = Set(sequence)
+func removeDuplicates<T: Sequence>(sequence: T) -> [T.Element] where T.Element: Hashable {
+    let result: Set<T.Element> = Set(sequence)
     return Array(result)
 }
 
