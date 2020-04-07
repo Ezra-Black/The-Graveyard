@@ -2,8 +2,7 @@
 //
 //import Foundation
 ////
-var x = 5
-var y = 10
+
 ////
 //
 //
@@ -25,6 +24,9 @@ var y = 10
 
 //custom infixed operater
 
+var x = 5
+var y = 10
+
 infix operator <=>
 
 func <=> <T>(lhs: inout T, rhs: inout T) {
@@ -40,6 +42,7 @@ print(y)
 x <=> y
 print(x)
 print(y)
+
 
 
 

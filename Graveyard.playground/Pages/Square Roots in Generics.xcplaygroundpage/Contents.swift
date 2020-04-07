@@ -50,6 +50,7 @@ func **<T: Numeric>(value: T, exponent: Int) -> T {
 //extensions on protocols to make things simpler
 
 
+
 //Self = type------self = value
 extension Numeric {
     func raisedTo(exponent: Int) -> Self {

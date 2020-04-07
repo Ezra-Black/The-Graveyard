@@ -40,10 +40,10 @@ func removeDuplicates(array: [Int]) -> [Int] {
 //}
 
 
-//func removeDuplicates<Element: Hashable>(array: [Element]) -> [Element] {
-//    let set = Set(array)
-//    return Array(set)
-//}
+func removeDuplicates<Element: Hashable>(array: [Element]) -> [Element] {
+    let set = Set(array)
+    return Array(set)
+}
 
 
 
