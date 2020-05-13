@@ -15,7 +15,6 @@
         <page name='Custom Control BPl8'/>
         <page name='FlareBoilerpl8'/>
         <page name='networking boilerpl8'/>
-        <page name='CoreDataStack'/>
         <page name='Intermediate Codable'/>
         <page name='SWG Codable'/>
         <page name='Swift Generics'/>
@@ -23,5 +22,6 @@
         <page name='Queue Generics'/>
         <page name='Square Roots in Generics'/>
         <page name='Deuplicates'/>
+        <page name='CoreDataStack'/>
     </pages>
 </playground>
