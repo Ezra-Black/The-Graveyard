@@ -23,5 +23,6 @@
         <page name='Square Roots in Generics'/>
         <page name='Deuplicates'/>
         <page name='CoreDataStack'/>
+        <page name='NetworkDataLoader'/>
     </pages>
 </playground>
