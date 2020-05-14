@@ -1,26 +1,26 @@
-////: [Previous](@previous)
-//
-//import Foundation
-////
+//: [Previous](@previous)
 
-////
+import Foundation
 //
+
 //
-//func exchange<Element>(lhs: inout Element, rhs: inout Element) {
-//    let placeHolder = lhs
-//    lhs = rhs
-//    rhs = placeHolder
-//}
-////print(x, y)
-////exchange(lhs: &x, rhs: &y)
-////print(x, y)
-//
-//var first = "eric"
-//var second = "Dave"
-//exchange(lhs: &first, rhs: &second)
-//
-//print(first, second)
-//
+
+
+func exchange<Element>(lhs: inout Element, rhs: inout Element) {
+    let placeHolder = lhs
+    lhs = rhs
+    rhs = placeHolder
+}
+//print(x, y)
+//exchange(lhs: &x, rhs: &y)
+//print(x, y)
+
+var first = "eric"
+var second = "Dave"
+exchange(lhs: &first, rhs: &second)
+
+print(first, second)
+
 
 //custom infixed operater
 

@@ -22,22 +22,22 @@ func removeDuplicates(array: [Int]) -> [Int] {
 }
  */
 
-// print(removeDuplicates(array: array))
+ print(removeDuplicates(array: array))
 
 
-// Generic
+ Generic
 
-//func removeDuplicates<T: Equatable>(array: [T]) -> [T] {
-//    var result: [T] = []
-//
-//    for item in array {
-//        if !result.contains(item) {
-//            result.append(item)
-//        }
-//    }
-//
-//    return result
-//}
+func removeDuplicates<T: Equatable>(array: [T]) -> [T] {
+    var result: [T] = []
+
+    for item in array {
+        if !result.contains(item) {
+            result.append(item)
+        }
+    }
+
+    return result
+}
 
 
 func removeDuplicates<Element: Hashable>(array: [Element]) -> [Element] {
