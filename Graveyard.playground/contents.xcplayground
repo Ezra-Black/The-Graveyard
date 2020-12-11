@@ -24,7 +24,7 @@
         <page name='Deuplicates'/>
         <page name='CoreDataStack'/>
         <page name='NetworkDataLoader'/>
-        <page name='Test'/>
+        <page name='UILabel Extensions'/>
         <page name='Untitled Page'/>
         <page name='Extensions'/>
     </pages>
