@@ -34,3 +34,5 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
         return ar.filter({ $0 == sockColour }).count / 2
     }).reduce(0, +)
 }
+
+

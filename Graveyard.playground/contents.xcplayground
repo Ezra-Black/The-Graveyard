@@ -24,6 +24,8 @@
         <page name='Deuplicates'/>
         <page name='CoreDataStack'/>
         <page name='NetworkDataLoader'/>
-        <page name='SwiftMail'/>
+        <page name='Test'/>
+        <page name='Untitled Page'/>
+        <page name='Extensions'/>
     </pages>
 </playground>
